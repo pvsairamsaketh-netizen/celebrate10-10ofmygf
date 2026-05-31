@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations Akku! | 10/10 SGPA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-pink-500 selection:text-white overflow-hidden" id="body">
+
+    <div id="lock-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-950 px-4 transition-all duration-700">
+        <div class="max-w-md w-full text-center space-y-8 backdrop-blur-md bg-slate-900/40 p-8 rounded-2xl border border-slate-800/60 shadow-2xl">
+            <div class="space-y-3">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-pink-500/20 to-violet-500/20 text-pink-500 mb-2 animate-bounce">
+                    <i class="fa-solid fa-lock text-2xl"></i>
+                </div>
+                <h2 class="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-pink-400 via-purple-400 to-violet-400 bg-clip-text text-transparent">Secure Access Required</h2>
+                <p class="text-sm text-slate-400">Enter the secret key to view her academic records.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <input type="password" id="passcode-input" placeholder="Hint: Her perfect 2nd sem score..." 
+                    class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-pink-500 text-center text-lg tracking-widest text-pink-400 font-mono transition-all duration-300 shadow-inner">
+                <button id="unlock-btn" class="w-full py-3.5 bg-gradient-to-r from-pink-500 via-purple-500 to-violet-600 hover:from-pink-600 hover:to-violet-700 text-white font-semibold rounded-xl shadow-lg shadow-pink-500/20 transition-all duration-300 active:scale-[0.98]">
+                    Decrypt Dashboard
+                </button>
+                <p id="error-msg" class="text-xs text-red-400 opacity-0 transition-opacity duration-300 font-mono">Access Denied. Incorrect key.</p>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content" class="hidden min-h-screen opacity-0 transition-opacity duration-1000 max-w-4xl mx-auto px-4 py-12 space-y-16">
+        
+        <section class="text-center space-y-4 pt-8">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-gradient-to-r from-pink-500/10 to-purple-500/10 text-pink-400 border border-pink-500/30 animate-pulse">
+                <i class="fa-solid fa-bolt text-amber-400"></i> Semester 2: Absolute Perfection
+            </span>
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent py-2">
+                All Hail The 10/10 Queen!
+            </h1>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto font-medium">
+                Setting the bar impossibly high. Halfway through M.Tech, completely dominating the curve.
+            </p>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden group hover:border-pink-500/40 hover:-translate-y-1 transition-all duration-300 shadow-xl">
+                <div class="absolute top-0 right-0 p-4 opacity-5 text-pink-500 text-7xl font-black font-mono select-none pointer-events-none group-hover:scale-110 transition-transform duration-300">10</div>
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-500">2nd Sem SGPA</p>
+                <p class="text-5xl font-black font-mono text-gradient bg-gradient-to-r from-pink-500 to-rose-400 bg-clip-text text-transparent mt-3">10.0</p>
+                <p class="text-xs text-slate-400 mt-3 font-medium">Flawless execution this semester.</p>
+            </div>
+            
+            <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden group hover:border-violet-500/40 hover:-translate-y-1 transition-all duration-300 shadow-xl">
+                <div class="absolute top-0 right-0 p-4 opacity-5 text-violet-500 text-6xl select-none pointer-events-none group-hover:scale-110 transition-transform duration-300"><i class="fa-solid fa-graduation-cap"></i></div>
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Current Phase</p>
+                <p class="text-3xl font-extrabold text-violet-400 mt-4">M.Tech Ongoing</p>
+                <p class="text-xs text-slate-400 mt-4 font-medium">Foundation solid. Ready for the next tier.</p>
+            </div>
+
+            <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden group hover:border-emerald-500/40 hover:-translate-y-1 transition-all duration-300 shadow-xl flex flex-col justify-between min-h-[160px]">
+                <div>
+                    <div class="flex items-center justify-between">
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Placement Mode</p>
+                        <span class="flex items-center gap-1.5 text-[10px] font-mono font-bold tracking-widest text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>LIVE
+                        </span>
+                    </div>
+                    <p class="text-3xl font-extrabold text-emerald-400 mt-4">Initializing...</p>
+                </div>
+                
+                <div class="mt-4 font-mono text-xs text-slate-400 border-t border-slate-800/60 pt-3 flex items-center gap-2">
+                    <i class="fa-solid fa-angle-right text-emerald-500 text-[10px] animate-pulse"></i>
+                    <span id="placement-loader" class="font-medium">Syncing core fundamentals...</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gradient-to-r from-indigo-950/40 to-slate-900/40 border border-indigo-500/20 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-4 justify-between backdrop-blur-md shadow-xl">
+            <div class="flex items-center gap-4 text-center md:text-left flex-col md:flex-row">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0 shadow-inner">
+                    <i class="fa-solid fa-earth-americas text-xl animated-earth"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-200 text-base">Distance Latency Detected</h4>
+                    <p class="text-sm text-slate-400 font-medium">Physical proximity: Offline | Emotional connection: 100% Maximum Capacity</p>
+                </div>
+            </div>
+            <div class="px-4 py-2 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-xs font-mono font-bold text-indigo-300 tracking-wider uppercase whitespace-nowrap">
+                Pending Physical Meetup
+            </div>
+        </section>
+
+        <section class="space-y-6">
+            <h3 class="text-xl font-bold border-b border-slate-800 pb-3 flex items-center gap-2 tracking-tight">
+                <i class="fa-solid fa-terminal text-pink-500 text-sm"></i> Track Status & Pipeline
+            </h3>
+            
+            <div class="border-l-2 border-slate-800 ml-4 pl-6 space-y-8 relative">
+                <div class="relative group">
+                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-slate-700 group-hover:border-slate-500 transition-colors duration-300"></div>
+                    <h4 class="text-sm font-semibold text-slate-400 group-hover:text-slate-300 transition-colors duration-300">Phase 01 // The Commencement</h4>
+                    <p class="text-[11px] font-mono text-slate-600 mt-0.5">Semester 1</p>
+                    <p class="text-sm text-slate-500 mt-1.5 max-w-2xl leading-relaxed">Stepping into the high-intensity environment of advanced engineering. Adapting, learning, and conquering the baseline.</p>
+                </div>
+                <div class="relative group">
+                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-pink-500 group-hover:bg-pink-500/20 transition-all duration-300"></div>
+                    <h4 class="text-sm font-semibold text-slate-200 flex items-center gap-2 group-hover:text-pink-400 transition-colors duration-300">
+                        Phase 02 // Peak Performance <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded-md bg-pink-500/20 text-pink-400 border border-pink-500/10">10/10 Score</span>
+                    </h4>
+                    <p class="text-[11px] font-mono text-slate-500 mt-0.5">Semester 2 Complete</p>
+                    <p class="text-sm text-slate-400 mt-1.5 max-w-2xl leading-relaxed">Crushing complex papers, labs, and exams with definitive perfection. The hard work compiled beautifully into a flawless 10.0 SGPA.</p>
+                </div>
+                <div class="relative group">
+                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-emerald-500 group-hover:bg-emerald-500/20 transition-all duration-300"></div>
+                    <h4 class="text-sm font-semibold text-slate-200 flex items-center gap-2 group-hover:text-emerald-400 transition-colors duration-300">
+                        Phase 03 // Placement Architecture <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/10 animate-pulse">Processing</span>
+                    </h4>
+                    <p class="text-[11px] font-mono text-slate-500 mt-0.5">Preparation & Strategy</p>
+                    <p class="text-sm text-slate-400 mt-1.5 max-w-2xl leading-relaxed">Reviewing core fundamentals, solving data structures, and prepping to dominate interviews. The industry isn't ready for what's coming.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gradient-to-b from-slate-900/80 to-slate-950 border border-slate-800 rounded-3xl p-8 md:p-14 shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-64 h-64 bg-pink-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-12 -left-12 w-64 h-64 bg-violet-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="max-w-2xl mx-auto space-y-8 relative z-10">
+                <div class="text-center space-y-2">
+                    <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-pink-500/10 text-pink-400 mb-2 shadow-inner">
+                        <i class="fa-solid fa-heart text-xl animate-pulse"></i>
+                    </div>
+                    <h3 class="text-3xl font-extrabold tracking-tight text-slate-100">A Message From My Heart</h3>
+                    <p class="text-xs text-slate-500 font-mono tracking-widest uppercase">Decrypted specifically for Akku</p>
+                </div>
+                
+                <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-slate-800 to-transparent"></div>
+                
+                <div class="text-slate-300 space-y-6 text-base leading-relaxed font-medium">
+                    <p class="text-lg font-bold text-slate-100">My Dearest Akku,</p>
+                    
+                    <p>
+                        First of all, I want to say an enormous congratulations to you! Getting a perfect <b>10/10 SGPA</b> in your second semester is a truly magnificent achievement. M.Tech is incredibly tough, demanding, and stressful, but you rose above every single challenge. You showed everyone exactly how brilliant, smart, and deeply hardworking you are. Seeing you succeed like this fills my heart with so much pride and joy. You are amazing.
+                    </p>
+                    
+                    <p>
+                        While I want to celebrate this beautiful moment with you, I also want to take a moment to look into your eyes and say I am truly, deeply sorry. I know that I made mistakes recently and caused you unnecessary stress when you already had so much on your plate. You deserve to feel completely happy, safe, and at peace—especially when you are pouring your energy into your future. It breaks my heart to know I let you down. Please know that you mean absolutely everything to me. I am fully committed to being a better, more understanding partner, protecting your happiness, and making things right between us.
+                    </p>
+                    
+                    <p>
+                        It definitely hurts that we are long-distance right now. On days like this, the miles between us feel a little heavier. I wish more than anything that I could step through this screen to be there with you in person. I want to hold you tight, give you the biggest hug, take you out to your favorite restaurant, and celebrate your perfect score properly. Even though I cannot physically be there to cheer you on, please remember that my thoughts, my love, and my heartbeat are always right there beside you.
+                    </p>
+                    
+                    <div class="text-pink-400 font-semibold bg-gradient-to-r from-pink-950/30 to-violet-950/30 p-5 rounded-2xl border border-pink-500/20 shadow-inner my-6 flex gap-4 items-start">
+                        <span class="text-2xl mt-0.5">🎁</span>
+                        <div>
+                            <strong class="text-slate-100 block mb-1">This Web Space Is My Solemn Promise:</strong>
+                            The exact day we finally meet in person, I am going to give you the most beautiful, unforgettable, and grand surprise celebration ever. You have earned every bit of it, and I cannot wait to make you smile.
+                        </div>
+                    </div>
+                    
+                    <p>
+                        Now, as you look forward and prepare for your upcoming campus placements, I want you to banish every single doubt from your mind. Never look back, and never question your capabilities. You are an absolute **10/10 champion**, and your academic record speaks for itself. You possess incredible intelligence, focus, and grit. Any company that gets the chance to hire you will be incredibly lucky to have you on their engineering teams. 
+                    </p>
+                    
+                    <p class="text-slate-200">
+                        As you go through coding rounds, resume reviews, and intense interviews, remember that you are not doing this alone. I am standing right behind you through every single step, sending you all my strength and support. You are going to absolutely crush it, Akku!
+                    </p>
+                    
+                    <div class="pt-6 border-t border-slate-900 flex justify-between items-center text-sm">
+                        <span class="font-mono text-slate-500 font-normal">With all my love and devotion,</span>
+                        <span class="font-mono text-pink-400 font-bold tracking-wider text-base">— Saki</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-xs text-slate-600 font-mono pt-8 pb-12 tracking-wide">
+            Built with pride, love, and unwavering support. Compiled in 2026.
+        </footer>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
